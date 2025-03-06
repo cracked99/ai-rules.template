@@ -1,0 +1,43 @@
+---
+description: Coding-Central-Metric-Table
+globs: alwaysApply: True
+alwaysApply: false
+---
+
+## Coding-Metric-Table
+
+The following table provides a consolidated reference of both parameter rules and code quality metrics for quick assessment of code health and compliance:
+
+| Category | Rule/Metric | Description | Threshold/Guideline | Impact |
+|----------|-------------|-------------|---------------------|--------|
+| **Parameter Rules** | Null Pointers | Pointers are not NULL unless explicitly permitted | No NULL pointers without documentation | Memory access violations, crashes |
+| | Pointer Validity | Pointers point to what they purport to point to | All pointers reference valid objects | Undefined behavior, data corruption |
+| | Pointer Alignment | Pointers must be properly aligned | Architecture-specific alignment | Performance degradation, crashes on some platforms |
+| | Memory Ownership | Caller has right to use pointed memory | No freed or unauthorized memory | Use-after-free vulnerabilities |
+| | Buffer Size | Buffers valid to declared/implied size | Exact match to specified size | Buffer overflows, security vulnerabilities |
+| | Handle Validity | Handles refer to valid, non-destroyed objects | All handles must be valid | Resource leaks, crashes |
+| | Parameter Stability | Parameters don't change during function call | No concurrent modification | Race conditions, unpredictable behavior |
+| | Parameter Count | Correct number of parameters with correct calling convention | Exact match to function signature | Stack corruption, undefined behavior |
+| | Object Methods | When invoking methods, 'this' parameter is the object | Valid object instance | Crashes, undefined behavior |
+| | Parameter Lifetime | Function can use parameters during execution but not after return | Duration of function call | Dangling pointers, use-after-free |
+| | Input Buffer Usage | Functions can read full extent of provided buffer | Entire buffer may be read | Information leakage if buffer contains sensitive data |
+| | Output Buffer Rules | Output buffers can't overlap inputs, contents undefined on failure | No overlap between buffers | Data corruption, information leakage |
+| **Code Complexity** | Cyclomatic Complexity | Number of independent paths through code | < 10 per function | Difficult testing, maintenance challenges |
+| | Function Length | Number of lines in a function | 30-50 lines maximum | Readability issues, multiple responsibilities |
+| | Class/Module Size | Number of lines in a class or module | 300-500 lines per class, < 1000 per file | Single responsibility violations |
+| | Nesting Depth | Levels of nested control structures | Maximum 3-4 levels | Cognitive load, readability issues |
+| **Code Organization** | Comment Density | Ratio of comments to code | 10-30% | Documentation gaps or overly complex code |
+| | Coupling | Interdependence between modules | Minimize dependencies | Difficult modifications, testing challenges |
+| | Cohesion | Relatedness of class/module functionality | High cohesion preferred | Scattered responsibilities, maintenance issues |
+| | Code Duplication | Repeated code segments | < 3 duplicated lines | Maintenance burden, inconsistent fixes |
+| **Quality Assurance** | Test Coverage | Percentage of code executed by tests | > 70-80% overall, 100% for critical paths | Undetected bugs, regression issues |
+| | Naming Conventions | Clarity and consistency of identifiers | Descriptive, consistent patterns | Cognitive load, readability issues |
+| | Dependency Management | Control of external libraries | Minimize, regularly update | Security vulnerabilities, compatibility issues |
+| | Error Handling | Comprehensive handling of failure cases | All error paths handled | Resource leaks, system instability |
+| **Performance** | Performance Metrics | Response time, throughput, resource usage | Application-specific benchmarks | User experience, scalability issues |
+| | Code Churn | Frequency of changes to specific components | Monitor high-churn areas | Design problems, instability |
+| | Technical Debt | Accumulated shortcuts and known issues | Track and regularly address | Increasing maintenance costs, decreasing velocity |
+
+This table serves as a quick reference guide for code reviews and quality assessments. Each metric should be evaluated in context, with the understanding that exceptions may be warranted in specific situations. The goal is to maintain high-quality, maintainable code while recognizing that different projects may have different priorities and constraints.
+
+(Note that these metrics should be applied with judgment and context. Different domains and languages may have different thresholds and priorities. The goal is not to blindly adhere to numbers but to use these metrics as indicators of potential issues that warrant further investigation. A metric that falls outside the recommended range is not necessarily problematic if there is a good reason for it.)

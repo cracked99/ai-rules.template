@@ -1,0 +1,153 @@
+---
+description: Comprehensive guide to code documentation best practices
+globs: alwaysApply: True
+alwaysApply: false
+---
+# Code Documentation Best Practices
+
+## Introduction
+High-quality documentation is essential for software project success. This guide outlines comprehensive best practices for documenting code across different contexts and provides actionable guidelines for developers.
+
+## Why Documentation Matters
+- **Knowledge Transfer**: Preserves critical information across team transitions
+- **Learning Acceleration**: Reduces onboarding time for new team members
+- **Maintenance Efficiency**: Makes updates and bug fixes easier and faster
+- **Code Quality**: Encourages better code by requiring explanation
+- **Collaboration**: Facilitates effective teamwork across time zones and teams
+- **Compliance**: Helps meet organizational or regulatory requirements
+- **User Adoption**: Makes APIs and libraries more accessible
+
+## Types of Documentation
+
+### Code-Level Documentation
+
+#### Inline Comments
+- Focus on explaining "why" rather than "what" (code already shows what)
+- Document non-obvious design decisions and edge cases
+- Keep comments up-to-date with code changes
+- Follow a consistent style and tone
+
+#### Docstrings
+- Document every public function, class, and module
+- Include: purpose, parameters, return values, exceptions, examples
+- Follow language-specific conventions (e.g., PEP 257 for Python)
+- Be concise but complete
+
+Example Python docstring:
+```python
+def calculate_discount(price, percentage, max_discount=None):
+    """
+    Calculate the discounted price of an item.
+    
+    Args:
+        price (float): The original price of the item
+        percentage (float): Discount percentage (0-100)
+        max_discount (float, optional): Maximum discount amount
+    
+    Returns:
+        float: The discounted price
+        
+    Raises:
+        ValueError: If price or percentage is negative
+        
+    Examples:
+        >>> calculate_discount(100, 20)
+        80.0
+        >>> calculate_discount(100, 25, max_discount=20)
+        80.0
+    """
+```
+
+### Project-Level Documentation
+
+#### README Files
+- Include: project overview, installation steps, basic usage
+- Add badges for build status, test coverage, etc.
+- Keep concise but informative
+- Place at repository root and in key subpackages
+
+#### Architecture Documentation
+- Describe system components and their interactions
+- Include diagrams (e.g., UML, flow charts)
+- Document architectural decisions and rationales
+- Update when architecture changes
+
+#### API Documentation
+- Document all public interfaces thoroughly
+- Include request/response examples
+- Specify authentication requirements
+- Document error codes and handling
+
+#### User Guides
+- Write from the user's perspective
+- Include step-by-step tutorials
+- Provide screenshots or code samples
+- Address common use cases
+
+## Documentation Tools
+
+### Code Documentation Generators
+- **Python**: Sphinx, pydoc, MkDocs
+- **JavaScript**: JSDoc, TypeDoc
+- **Java**: Javadoc
+- **C++**: Doxygen
+- **Go**: GoDoc
+- **Ruby**: RDoc, YARD
+
+### API Documentation
+- **OpenAPI/Swagger**: RESTful API documentation
+- **GraphQL Schema Documentation**: For GraphQL APIs
+- **gRPC Protocol Buffers**: For gRPC services
+
+### Diagram Tools
+- **PlantUML**: UML diagrams from text descriptions
+- **Mermaid**: Diagrams and charts with markdown-like syntax
+- **Draw.io/diagrams.net**: Web-based diagram editor
+
+## Best Practices
+
+### Documentation Strategy
+- **Document as You Code**: Don't postpone documentation
+- **Update Documentation with Code**: Make it part of code review process
+- **Automate Where Possible**: Use doc generators and linters
+- **Version Control Documentation**: Include docs in source control
+
+### Writing Guidelines
+- **Use Simple Language**: Avoid jargon when possible
+- **Structure Content**: Use headings, lists, and tables
+- **Be Consistent**: Follow a style guide
+- **Include Examples**: Demonstrate usage with real code
+- **Implement Progressive Disclosure**: Basic info first, details on demand
+
+### Maintenance
+- **Review Regularly**: Schedule periodic documentation reviews
+- **Measure Coverage**: Track documentation coverage like code coverage
+- **Get Feedback**: Ask new team members to identify documentation gaps
+- **Assign Ownership**: Make documentation maintenance a specific responsibility
+
+## Common Pitfalls to Avoid
+- **Outdated Documentation**: Worse than no documentation
+- **Over-Documentation**: Excessive detail obscures important information
+- **Ambiguous Language**: Vague or imprecise descriptions
+- **Poor Organization**: Documentation that's hard to navigate
+- **Missing Context**: Failing to explain why certain decisions were made
+- **Assuming Knowledge**: Not accounting for different experience levels
+
+## Measuring Documentation Quality
+- **Completeness**: Coverage of code/features
+- **Accuracy**: Correctness of information
+- **Clarity**: Ease of understanding
+- **Discoverability**: How easily users find what they need
+- **Usefulness**: How well it solves user problems
+
+## Documentation Standards and Templates
+- Consider creating organizational templates for:
+  - Function docstrings
+  - Class documentation
+  - Module documentation
+  - README files
+  - Release notes
+  - Architecture Decision Records (ADRs)
+
+## Conclusion
+High-quality documentation requires consistent effort but pays significant dividends in code maintainability, team efficiency, and user satisfaction. By incorporating these best practices, you'll create documentation that truly adds value to your project.

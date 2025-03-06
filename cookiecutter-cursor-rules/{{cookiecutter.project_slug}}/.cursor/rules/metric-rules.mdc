@@ -1,0 +1,85 @@
+---
+description: Coding-Metric-Rules
+globs: alwaysApply: True
+alwaysApply: false
+---
+## Coding-Metric-Rules
+
+Just as there are fundamental rules for parameters in system programming, there are essential metrics that experienced developers use to evaluate code quality. These metrics help identify potential issues, guide refactoring efforts, and ensure maintainable, efficient code. While some metrics may vary by language or domain, the following represent core principles that apply broadly across software development:
+
+1. **Cyclomatic Complexity should be minimized.** 
+   - Functions with a cyclomatic complexity greater than 10 are difficult to test and maintain.
+   - Each conditional branch (if, while, for, case) increases complexity.
+   - High complexity indicates a function is trying to do too much and should be refactored.
+
+2. **Method and Function Length should be reasonable.**
+   - Functions longer than 30-50 lines become difficult to understand at a glance.
+   - Excessively long functions often indicate multiple responsibilities that should be separated.
+   - The entire function should be visible on a single screen without scrolling, when possible.
+
+3. **Class and Module Size should be controlled.**
+   - Classes with more than 300-500 lines often violate the Single Responsibility Principle.
+   - Files exceeding 1000 lines are difficult to navigate and understand.
+   - Large modules should be evaluated for potential decomposition into smaller, focused components.
+
+4. **Nesting Depth should be limited.**
+   - Code with more than 3-4 levels of nesting becomes difficult to follow.
+   - Excessive nesting often indicates complex conditional logic that should be simplified or extracted.
+   - Each level of nesting increases the cognitive load required to understand the code.
+
+5. **Comment Density should be appropriate.**
+   - Code should be self-documenting where possible, with comments explaining "why" not "what."
+   - Critical sections, complex algorithms, and non-obvious decisions should be commented.
+   - Comment-to-code ratio below 10% may indicate insufficient documentation; above 30% may indicate overly complex code.
+
+6. **Coupling should be loose.**
+   - High coupling between modules makes code difficult to modify and test.
+   - Changes in one module should not cascade to many other modules.
+   - Dependency Injection and interfaces should be used to reduce coupling.
+
+7. **Cohesion should be high.**
+   - Functions and classes should have a single, well-defined purpose.
+   - Low cohesion indicates a component is trying to do too many unrelated things.
+   - Methods within a class should be related and work with the same data.
+
+8. **Code Duplication should be eliminated.**
+   - Duplicated code increases maintenance burden and bug risk.
+   - Code with more than 3 duplicated lines should be refactored into reusable functions.
+   - DRY (Don't Repeat Yourself) principle should be followed.
+
+9. **Test Coverage should be comprehensive.**
+   - Critical paths should have 100% test coverage.
+   - Overall code coverage should typically exceed 70-80%.
+   - Tests should verify both expected behavior and edge cases.
+
+10. **Naming Conventions should be consistent and descriptive.**
+    - Variable and function names should clearly indicate their purpose.
+    - Consistent naming patterns improve readability and reduce cognitive load.
+    - Cryptic abbreviations and single-letter variables (except in well-understood contexts like loop counters) should be avoided.
+
+11. **Dependency Management should be deliberate.**
+    - External dependencies should be minimized and carefully evaluated.
+    - Dependency updates should be regular but controlled.
+    - Transitive dependencies should be understood and monitored.
+
+12. **Error Handling should be comprehensive.**
+    - All potential error conditions should be handled appropriately.
+    - Error messages should be clear and actionable.
+    - Resources should be properly released in error conditions.
+
+13. **Performance Metrics should be monitored.**
+    - Critical paths should have performance benchmarks.
+    - Memory usage should be tracked and leaks prevented.
+    - Response times and throughput should meet specified requirements.
+
+14. **Code Churn should be monitored.**
+    - Files that change frequently may indicate design problems.
+    - High churn in specific components suggests instability or poor design.
+    - Historical churn data helps identify problematic areas for refactoring.
+
+15. **Technical Debt should be tracked.**
+    - Known issues and shortcuts should be documented.
+    - Technical debt should be regularly addressed, not just accumulated.
+    - The cost of delay in addressing technical debt should be estimated.
+
+(Note that these metrics should be applied with judgment and context. Different domains and languages may have different thresholds and priorities. The goal is not to blindly adhere to numbers but to use these metrics as indicators of potential issues that warrant further investigation. A metric that falls outside the recommended range is not necessarily problematic if there is a good reason for it.)

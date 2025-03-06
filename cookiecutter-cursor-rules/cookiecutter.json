@@ -1,0 +1,9 @@
+{
+    "project_name": "Cursor Rules Project",
+    "project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '-') }}",
+    "project_description": "A project with Cursor rules for AI assistance",
+    "author_name": "Your Name",
+    "author_email": "your.email@example.com",
+    "version": "0.1.0",
+    "open_source_license": ["MIT", "BSD-3-Clause", "GPL-3.0", "Apache-2.0", "None"]
+} 

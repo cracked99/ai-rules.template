@@ -1,0 +1,10 @@
+---
+description: 
+globs: alwaysApply: True
+alwaysApply: false
+---
+## Retrieval-Augmented-Generation (RAG)
+
+    - Retrieval-Augmented-Generation (RAG) is a technique used to generate text based on a given context.
+    - The most defining characteristic of RAG is that the context is typically a set of documents or a database, which the agentic framework then processes and generates a response based on the context, The generated text is typically used to answer a question or to complete a task.
+
